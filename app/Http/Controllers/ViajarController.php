@@ -42,7 +42,7 @@ class ViajarController extends Controller
     }
 
 
-    public function ApagarBancoViajar(Viajar $registrosViajars){
+    public function ApagarBancoViajar(Viajar $registrosViajar){
         //dd($registroViajar);
         $registrosViajar->delete();
         //Viajar::findOrfall($id)->delete;
@@ -52,7 +52,7 @@ class ViajarController extends Controller
     public function MostrarAltrearViajar(Viajar $registrosViajar){
         return view('alterarViajar',['registrosViajar' => $registrosViajar]);
     }
-    public function AlterarBancoCaminhao(  $registrosViajar, Request $request){
+    public function AlterarBancoViajar(  $registrosViajar, Request $request){
         $banco = $request ->validate([
         'modelo' => 'string|required',
         'marca'  => 'string|required',

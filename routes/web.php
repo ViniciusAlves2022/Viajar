@@ -2,8 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\CaminhaoController;
-use  App\Http\Controllers\CarrosController;
+use App\Http\Controllers\ViajarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,25 +20,12 @@ Route::get('/', function () {
 */
 
 Route::get('/',[HomeController::class,'MostrarHome'])->name('home');
-Route::get('/editar-caminhao',[CaminhaoController::class,'MostrarEditarCaminhao'])->name('editar-caminhao');
-Route::get('/cadastrar-caminhao',[CaminhaoController::class,'FormularioCadastro'])->name('cadastrar-caminhao');
-Route::post('/cadastrar-caminhao',[CaminhaoController::class,'SalvarBanco'])->name('salvar-banco');
+Route::get('/editar-viajar',[ViajarController::class,'MostrarEditarViajar'])->name('editar-viajar');
+Route::get('/cadastrar-viajar',[ViajarController::class,'FormularioCadastro'])->name('cadastrar-viajar');
+Route::post('/cadastrar-viajar',[ViajarController::class,'SalvarBanco'])->name('salvar-banco');
 //deletar
 
-Route::delete('/editar-caminhao/{registrosCaminhoes}',[CaminhaoController::class,'ApagarBancoCaminhao'])->name('apagar-caminhao');
-//alterar caminhao
-Route::get('/alterar-caminhao/{registrosCaminhoes}',[CaminhaoController::class,'MostrarAltrearCaminhao'])->name('alterar-caminhao');
-Route::put('/editar-caminhao/{registrosCaminhoes}',[CaminhaoController::class,'AlterarBancoCaminhao'])->name('alterar-banco-caminhao');
-
-
-
-
-Route::get('/',[HomeController::class,'MostrarHome'])->name('home');
-Route::get('/editar-carros',[CarrosController::class,'MostrarEditarCarros'])->name('editar-carros');
-Route::get('/cadastrar-carros',[CarrosController::class,'FormularioCadastro'])->name('cadastrar-carros');
-Route::post('/cadastrar-carros',[CarrosController::class,'SalvarBancoCarros'])->name('salvar-banco-carros');
-//deletar
-Route::delete('/editar-carros/{registrosCarros}',[CarrosController::class,'ApagarBancoCarros'])->name('apagar-carros');
-//alterar carros
-Route::get('/alterar-carros/{registrosCarros}',[CarrosController::class,'MotrarAltrearCarros'])->name('alterar-carros');
-Route::put('/alterar-carros/{registrosCarros}',[CarrosController::class,'AlterarBancoCarros'])->name('alterar-banco-carros');
+Route::delete('/editar-viajar/{registrosViajar}',[ViajarController::class,'ApagarBancoViajar'])->name('apagar-viajar');
+//alterar viajar
+Route::get('/alterar-viajar/{registrosViajar}',[ViajarController::class,'MostrarAltrearViajar'])->name('alterar-viajar');
+Route::put('/editar-viajar/{registrosViajar}',[ViajarController::class,'AlterarBancoViajar'])->name('alterar-banco-viajar');

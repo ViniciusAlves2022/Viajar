@@ -28,7 +28,7 @@ return new class extends Migration
 
     {
 
-        Schema::create('Gastronomia', function (Blueprint $table) {
+        Schema::create('Viajars', function (Blueprint $table) {
 
             $table->id();
 
